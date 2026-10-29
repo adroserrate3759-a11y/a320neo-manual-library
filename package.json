@@ -1,38 +1,28 @@
+
 {
-  "name": "a320neo-manual-library",
+  "name": "a320neo-manual",
   "version": "1.0.0",
-  "private": true,
-  "description": "A320 MSFS manual library portable desktop app",
-  "main": "electron/main.cjs",
+  "description": "A320neo V2 Manual",
+  "main": "electron/main.js",
   "scripts": {
     "start": "electron .",
-    "build:portable": "electron-builder --win portable"
+    "build": "electron-builder --win portable"
   },
   "devDependencies": {
-    "electron": "^36.4.0",
-    "electron-builder": "^26.0.12"
+    "electron": "^38.0.0",
+    "electron-builder": "^26.0.0"
   },
   "build": {
-    "appId": "com.study.a320manual",
-    "productName": "A320neo Manual Library",
+    "appId": "com.a320neo.manual",
+    "productName": "A320neo Manual",
+    "asar": true,
     "directories": {
       "output": "dist"
     },
-    "files": [
-      "electron/**/*",
-      "www/**/*",
-      "package.json"
-    ],
     "win": {
       "target": [
-        {
-          "target": "portable",
-          "arch": [
-            "x64"
-          ]
-        }
-      ],
-      "artifactName": "A320neo-Manual-Library-Portable-${version}.${ext}"
+        "portable"
+      ]
     }
   }
 }
